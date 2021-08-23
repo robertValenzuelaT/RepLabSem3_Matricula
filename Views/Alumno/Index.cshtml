@@ -1,0 +1,44 @@
+@model RepLabSem3_Matricula.Models.Alumno
+@{
+    ViewData["Title"] = "Matricula de Alumno";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="text-center">
+    <h1 class="display-4">Formulario de Matricula</h1>
+
+    <form asp-controller="Alumno" asp-action="Create">
+        <label asp-for="nombres" class="form-label"></label>
+        <input asp-for="nombres" class="form-control form-control-sm" type="text" placeholder="Escribe nombres" aria-label=".form-control-sm" />
+
+        <label asp-for="apellidos" class="control-label"></label>
+        <input asp-for="apellidos" class="form-control" />
+
+        <label asp-for="dni" class="control-label"></label>
+        <input asp-for="dni" class="form-control" />
+
+        <label asp-for="fechanac" class="control-label"></label>
+        <input asp-for="fechanac" class="form-control" />
+
+        <label asp-for="genero" class="control-label"></label>
+        Masculino
+        <input asp-for="genero" class="form-control" type="radio" value="M" />
+        Femenino
+        <input asp-for="genero" class="form-control" type="radio" value="F" />
+
+        <label asp-for="carrera" class="control-label"></label>
+        <select asp-for="carrera" class="form-control">
+            <option value="Ing. Sistemas">Sistemas</option>
+            <option value="Ing. Industrial">Industrial</option>
+            <option value="Ing. Electronica">Electronica</option>
+            <option value="Ing. Civil">Civil</option>           
+        </select>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Matricular</button> 
+        </div>              
+    </form>
+    <h1>@ViewData["Message"]</h1>
+
+</div>
